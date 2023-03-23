@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reservación</title>
+    <link rel="stylesheet" href="../styles/styles-forms.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../styles/Imagenes/Logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Crear cuenta</a></li>
+                <li><a href="#">Historial médico</a></li>
+                <li><a href="#">Cerrar</a></li>
+            </ul>
+        </nav>
+        <a href="" class="btn"><button>Contacto</button></a>
+    </header>
+
+    <br>
+
+    <div class="form">
+        <form>
+            <div>
+                <label for="Paciente">Paciente: </label>
+                <input type="text" id="Paciente" name="Paciente">
+            </div>
+            <br>
+
+            <div>
+                <label for="FechaIngreso">Fecha de ingreso: </label>
+                <input type="date" id="FechaIngreso" name="FechaIngreso">
+            </div>
+            <br>
+
+            <div>
+                <label>Seleccione el/los procedimiento/s que desee: </label><br>
+                <input type="checkbox" id="Apendicectomia" name="Apendicectomia" value="Apendicectomia">
+                <label for="Apendicectomia">Apendicectomía</label><br>
+
+                <input type="checkbox" id="Biopsia" name="Biopsia" value="Biopsia">
+                <label for="Biopsia">Biopsia de mama</label><br>
+
+                <input type="checkbox" id="cataratas" name="cataratas" value="cataratas">
+                <label for="cataratas">Cirugía de cataratas</label><br>
+
+                <input type="checkbox" id="Cesarea" name="Cesarea" value="Cesarea">
+                <label for="Cesarea">Cesárea</label><br>
+
+                <input type="checkbox" id="Histerectomia" name="Histerectomia" value="Histerectomia">
+                <label for="Histerectomia">Histerectomía</label><br>
+
+                <input type="checkbox" id="lumbalgia" name="lumbalgia" value="lumbalgia">
+                <label for="lumbalgia">Cirugía para la lumbalgia</label><br>
+
+                <input type="checkbox" id="Mastectomia" name="Mastectomia" value="Mastectomia">
+                <label for="Mastectomia">Mastectomía</label><br>
+
+                <input type="checkbox" id="Amigdalectomia" name="Amigdalectomia" value="Amigdalectomia">
+                <label for="Amigdalectomia">Amigdalectomía</label><br>
+
+                <label for="Procedimiento">Otro/s: </label>
+                <input type="text" id="Procedimiento" name="Procedimiento">
+            </div>
+            <br>
+
+            <div>
+                <input type="reset">
+            </div>
+            <br>
+
+            <div>
+                <input type="submit">
+            </div>
+            <br>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

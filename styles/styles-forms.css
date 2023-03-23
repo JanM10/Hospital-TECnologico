@@ -34,7 +34,7 @@ se puede clickear*/
   transition: all 0.3s;
 }
 
-.header .logo img:hover{
+.header .logo img:hover {
   transform: scale(1.2);
 }
 
@@ -62,12 +62,6 @@ se puede clickear*/
 }
 
 
-
-
-label {
-  color: #14213d;
-}
-
 div.form {
   display: block;
   text-align: center;
@@ -78,10 +72,11 @@ form {
   margin-left: auto;
   margin-right: auto;
   width: 300px;
+  /*Puede ser que aqui haya un problema*/
   text-align: left;
 }
 
-input {
+input[type=text], input[type=date], input[type="reset"], input[type="submit"] {
   width: 100%;
 }
 
@@ -92,7 +87,7 @@ textarea {
 input,
 textarea {
   outline: none;
-  border-color: azure;
+  border-color: #14213d;
   border-style: outset;
 }
 
