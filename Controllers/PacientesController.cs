@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace MiProyecto.Controllers
 {
@@ -49,6 +51,7 @@ namespace MiProyecto.Controllers
             pacienteExistente.Direccion = paciente.Direccion;
             pacienteExistente.Patologias = paciente.Patologias;
             pacienteExistente.Tratamiento = paciente.Tratamiento;
+            pacienteExistente.Password = paciente.Password;
             GuardarDatosEnArchivo(datos);
             return Ok();
         }
@@ -76,28 +79,60 @@ namespace MiProyecto.Controllers
             }
             var json = System.IO.File.ReadAllText(_archivoDatos);
             var datos = JsonConvert.DeserializeObject<Dictionary<string, List<Paciente>>>(json);
+            DesencriptarPassword(datos);
             return datos;
         }
 
         private void GuardarDatosEnArchivo(Dictionary<string, List<Paciente>> datos)
         {
+            EncriptarPassword(datos);
             var json = JsonConvert.SerializeObject(datos);
             System.IO.File.WriteAllText(_archivoDatos, json);
         }
+
+        private static readonly byte[] clave = new byte[] { 0x42, 0x72, 0x65, 0x6e, 0x74, 0x6f, 0x20, 0x4d, 0x65, 0x64, 0x69, 0x63, 0x6f, 0x20, 0x32, 0x30 };
+
+
+        private static void EncriptarPassword(Dictionary<string, List<Paciente>> datos)
+        {
+            foreach (var pacienteList in datos.Values)
+            {
+                foreach (var paciente in pacienteList)
+                {
+                    if (!string.IsNullOrEmpty(paciente.Password))
+                    {
+                        byte[] passwordPlano = Encoding.UTF8.GetBytes(paciente.Password);
+                        using var aes = Aes.Create();
+                        aes.Key = clave;
+                        aes.IV = new byte[16];
+                        using var encryptor = aes.CreateEncryptor();
+                        byte[] passwordEncriptado = encryptor.TransformFinalBlock(passwordPlano, 0, passwordPlano.Length);
+                        paciente.Password = Convert.ToBase64String(passwordEncriptado);
+                    }
+                }
+            }
+        }
+
+        private static void DesencriptarPassword(Dictionary<string, List<Paciente>> datos)
+        {
+            foreach (var pacienteList in datos.Values)
+            {
+                foreach (var paciente in pacienteList)
+                {
+                    if (!string.IsNullOrEmpty(paciente.Password))
+                    {
+                        byte[] passwordEncriptadoBytes = Convert.FromBase64String(paciente.Password);
+                        using var aes = Aes.Create();
+                        aes.Key = clave;
+                        aes.IV = new byte[16];
+                        using var decryptor = aes.CreateDecryptor();
+                        byte[] passwordDesencriptadoBytes = decryptor.TransformFinalBlock(passwordEncriptadoBytes, 0, passwordEncriptadoBytes.Length);
+                        paciente.Password = Encoding.UTF8.GetString(passwordDesencriptadoBytes);
+                    }
+                }
+            }
+        }
     }
 
-    // Formato de un paciente
-    public class Paciente
-    {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido1 { get; set; }
-        public string Apellido2 { get; set; }
-        public int Cedula { get; set; }
-        public int Telefono { get; set; }
-        public string Direccion { get; set; }
-        public string FechaNacimiento { get; set; }
-        public string Patologias { get; set; }
-        public string Tratamiento { get; set; }
-    }
+    
 }

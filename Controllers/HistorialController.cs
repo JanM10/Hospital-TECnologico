@@ -26,7 +26,7 @@ namespace MiProyecto.Controllers
         {
             var datos = ObtenerDatosDesdeArchivo();
             var historiales = datos["Historial"];
-            historial.Id = historiales.Count + 1; // Asigna un nuevo Id al paciente
+            historial.Id = historiales.Count + 1; //Asigna un nuevo Id al paciente
             historiales.Add(historial);
             GuardarDatosEnArchivo(datos);
             return Ok();
@@ -82,14 +82,4 @@ namespace MiProyecto.Controllers
         }
     }
 
-    // Formato de un paciente
-    public class HistorialMedico
-    {
-        public int Id { get; set; }
-        public string Procedimiento { get; set; }
-        public DateOnly FechaProcedimiento { get; set; }
-        public string Tratamiento { get; set; }
-
-
-    }
 }
