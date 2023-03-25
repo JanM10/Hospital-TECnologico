@@ -1,16 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
 
-* {
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-
-    /*Lo pongo pq me duelen los ojos de ver blanco*/
-}
-
-@font-face {
-    font-family: 'Nunito', sans-serif;
-}
 
 .page {
     height: 100vh;
@@ -34,31 +22,7 @@
     justify-content: space-around;
 }
 
-.alt-login {
-    width: 80%;
-    height: 3em;
-    display: flex;
-    justify-content: space-around;
-}
-
-.alt-login div {
-    width: 45%;
-    height: 90%;
-    border-radius: 0.25em;
-    background-color: black;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
-
-/* Esto es extra no importa
-.google {
-    background-image: ;
-}
-*/
-
-input {
+.input {
     border: none;
     background-color: white;
     height: 4em;
@@ -68,11 +32,12 @@ input {
     padding: 2em;
 }
 
-input:focus {
-    outline-color:#071330;
+.input:focus {
+    outline-color: #071330;
 }
 
-.login-btn {
+
+.login_btn {
     width: 40%;
     height: 3em;
     background-color: #9CA6B8;
@@ -84,6 +49,6 @@ input:focus {
     cursor: pointer;
 }
 
-.login-btn:hover {
+.login_btn:hover {
     transform: scale(1.25);
 }
