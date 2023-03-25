@@ -83,14 +83,6 @@ namespace MiProyecto.Controllers
         }
     }
 
-    // Formato de una reservación
-    public class Reservacion
-    {
-        public int Id { get; set; }
-        public string Paciente { get; set; }
-        public DateOnly FechaIngreso { get; set; }
-        public int DuracionProcedimientos { get; set; }
-        public DateOnly FechaSalida { get; set; }
-    }
+    
 }
 
