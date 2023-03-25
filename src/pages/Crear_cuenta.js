@@ -67,21 +67,38 @@ const Crear_cuenta = () => {
                     </div>
                     <br />
 
-
-                    <div>
-                        <label for="Tratamiento">Tratamiento: </label>
-                        <input className={Style.input} type="text" id="Tratamiento" name="Tratamiento" />
-                    </div>
-                    <br />
-
                     <div>
                         <label>Seleccione los tipos de patologias que posee: </label>
+                        <br />
+                        <input className={Style.input} type="checkbox" id="Antrax" name="Antrax" />
+                        <label for="Antrax">Antrax</label>
+                        <br />
+                        <input className={Style.input} type="checkbox" id="Asma" name="Asma" />
+                        <label for="Asma">Asma</label>
+                        <br />
+                        <input className={Style.input} type="checkbox" id="Artritis" name="Artritis" />
+                        <label for="Artritis">Artritis</label>
                         <br />
                         <input className={Style.input} type="checkbox" id="Cancer" name="Cancer" />
                         <label for="Cancer">Cancer</label>
                         <br />
-                        <input className={Style.input} type="checkbox" id="Fiebre" name="Fiebre" />
-                        <label for="Fiebre">Fiebre</label>
+                        <input className={Style.input} type="checkbox" id="Clamidia" name="Clamidia" />
+                        <label for="Clamidia">Clamidia</label>
+                        <br />
+                        <input className={Style.input} type="checkbox" id="Diabetes" name="Diabetes" />
+                        <label for="Diabetes">Diabetes</label>
+                        <br />
+                        <input className={Style.input} type="checkbox" id="Influenza" name="Influenza" />
+                        <label for="Influenza">Influenza</label>
+                        <br />
+                        <input className={Style.input} type="checkbox" id="Meningitis" name="Meningitis" />
+                        <label for="Meningitis">Meningitis</label>
+                        <br />
+                        <input className={Style.input} type="checkbox" id="Neumonia" name="Neumonia" />
+                        <label for="Neumonia">Neumonia</label>
+                        <br />
+                        <input className={Style.input} type="checkbox" id="Rabia" name="Rabia" />
+                        <label for="Rabia">Rabia</label>
                     </div>
                     <br />
 

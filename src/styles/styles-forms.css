@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+
+.header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  padding: 5px 10%;
+}
+
+/*Pequeño detalle cuando pone el cursor encima de la imagen cambia a pointer para dar las sensacion de que
+se puede clickear*/
+.header .logo {
+  cursor: pointer;
+}
+
+.header .logo img {
+  height: 70px;
+  width: auto;
+  transition: all 0.3s;
+}
+
+.header .logo img:hover{
+  transform: scale(1.2);
+}
+
+.header .nav-links {
+  list-style: none;
+}
+
+.header .nav-links li {
+  display: inline-block;
+  padding: 0 30px;
+}
+
+.header .nav-links li:hover {
+  transform: scale(1.1);
+}
+
+.header .nav-links a {
+  font-size: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.header .nav-links li a:hover {
+  color: #fca311;
+}
+
+
+
+
+label {
+  color: #14213d;
+}
+
+div.form {
+  display: block;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  outline: none;
+  border-color: azure;
+  border-style: outset;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 4px #14213d;
+  /*border: 1px solid #ddd;*/
+}

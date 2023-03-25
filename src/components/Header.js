@@ -14,7 +14,7 @@ function header() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/Crear_cuenta">Crear_cuenta</Link></li>
           <li><Link to="/Reservacion">Reservación</Link></li>
-          <li><Link to="/Historial Médico">Historial Médico</Link></li>
+          <li><Link to="/Historial_medico">Historial Médico</Link></li>
           <li><Link to="/">Cerrar</Link></li>
         </ul>
       </nav>

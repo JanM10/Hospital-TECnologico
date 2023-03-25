@@ -29,7 +29,7 @@ div.form {
 }
 
 
-.input[type=text], .input[type=date], .input[type="reset"], .input[type="submit"] {
+.input[type=text], .input[type=date], .input[type="reset"], .input[type="submit"], .input[type=tel] {
   width: 100%;
 }
 
