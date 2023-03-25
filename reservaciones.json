@@ -1,0 +1,1 @@
+{"Reservaciones":[{"Id":1,"nombrePaciente":"string","FechaIngreso":"2023-03-25T04:34:03.645Z","DuracionProcedimientos":2,"FechaSalida":"2023-03-27T04:34:03.645Z"},{"Id":2,"nombrePaciente":"string","FechaIngreso":"2023-03-25T04:34:03.645Z","DuracionProcedimientos":4,"FechaSalida":"2023-03-29T04:34:03.645Z"}]}

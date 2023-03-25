@@ -11,7 +11,7 @@ namespace MiProyecto.Controllers
     [Route("api/[controller]")]
     public class HistorialController : ControllerBase
     {
-        private readonly string _archivoDatos = "datos.json";
+        private readonly string _archivoDatos = "historial.json";
 
         [HttpGet]
         public IActionResult ObtenerPacientes()
@@ -53,13 +53,13 @@ namespace MiProyecto.Controllers
         public IActionResult EliminarPaciente(int id)
         {
             var datos = ObtenerDatosDesdeArchivo();
-            var pacientes = datos["Pacientes"];
-            var pacienteExistente = pacientes.Find(p => p.Id == id);
-            if (pacienteExistente == null)
+            var historiales = datos["Historial"];
+            var historialExistente = historiales.Find(p => p.Id == id);
+            if (historialExistente == null)
             {
                 return NotFound();
             }
-            pacientes.Remove(pacienteExistente);
+            historiales.Remove(historialExistente);
             GuardarDatosEnArchivo(datos);
             return Ok();
         }

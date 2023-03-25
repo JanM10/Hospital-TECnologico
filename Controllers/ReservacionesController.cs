@@ -10,7 +10,7 @@ namespace MiProyecto.Controllers
     [Route("api/[controller]")]
     public class ReservacionesController : ControllerBase
     {
-        private readonly string _archivoDatos = "datos.json";
+        private readonly string _archivoDatos = "reservaciones.json";
 
         [HttpGet]
         public IActionResult ObtenerReservaciones()
@@ -42,7 +42,7 @@ namespace MiProyecto.Controllers
             {
                 return NotFound();
             }
-            reservacionExistente.Paciente = reservacion.Paciente;
+            reservacionExistente.nombrePaciente = reservacion.nombrePaciente;
             reservacionExistente.FechaIngreso = reservacion.FechaIngreso;
             reservacionExistente.DuracionProcedimientos = reservacion.DuracionProcedimientos;
             reservacionExistente.FechaSalida = reservacion.FechaIngreso.AddDays(reservacion.DuracionProcedimientos);
@@ -82,7 +82,5 @@ namespace MiProyecto.Controllers
             System.IO.File.WriteAllText(_archivoDatos, json);
         }
     }
-
-    
 }
 
