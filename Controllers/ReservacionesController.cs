@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Numerics;
 
 namespace MiProyecto.Controllers
 {
@@ -16,7 +17,7 @@ namespace MiProyecto.Controllers
         public IActionResult ObtenerReservaciones()
         {
             var datos = ObtenerDatosDesdeArchivo();
-            var reservaciones = datos["Reservaciones"];
+            var reservaciones = datos["Reservaciones"]; // Del archivo almacena los datos con la llave "Rservaciones"
             return Ok(reservaciones);
         }
 
@@ -67,18 +68,18 @@ namespace MiProyecto.Controllers
 
         private Dictionary<string, List<Reservacion>> ObtenerDatosDesdeArchivo()
         {
-            if (!System.IO.File.Exists(_archivoDatos))
+            if (!System.IO.File.Exists(_archivoDatos)) //Revisa si el archivo no existe
             {
                 return new Dictionary<string, List<Reservacion>>();
             }
             var json = System.IO.File.ReadAllText(_archivoDatos);
-            var datos = JsonConvert.DeserializeObject<Dictionary<string, List<Reservacion>>>(json);
+            var datos = JsonConvert.DeserializeObject<Dictionary<string, List<Reservacion>>>(json); //Deserializa los datos
             return datos;
         }
 
         private void GuardarDatosEnArchivo(Dictionary<string, List<Reservacion>> datos)
         {
-            var json = JsonConvert.SerializeObject(datos);
+            var json = JsonConvert.SerializeObject(datos); //Serializa los datos
             System.IO.File.WriteAllText(_archivoDatos, json);
         }
     }

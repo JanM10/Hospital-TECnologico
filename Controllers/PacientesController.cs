@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -17,7 +18,7 @@ namespace MiProyecto.Controllers
         public IActionResult ObtenerPacientes()
         {
             var datos = ObtenerDatosDesdeArchivo();
-            var pacientes = datos["Pacientes"];
+            var pacientes = datos["Pacientes"]; // Del archivo almacena los datos con la llave "Pacientes"
             return Ok(pacientes);
         }
 
