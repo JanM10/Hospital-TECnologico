@@ -11,13 +11,13 @@ namespace MiProyecto.Controllers
     [Route("api/[controller]")]
     public class HistorialController : ControllerBase
     {
-        private readonly string _archivoDatos = "datos.json";
+        private readonly string _archivoDatos = "historial.json";
 
         [HttpGet]
         public IActionResult ObtenerPacientes()
         {
             var datos = ObtenerDatosDesdeArchivo();
-            var historiales = datos["Historial"];
+            var historiales = datos["Historial"]; //Del archivo almacena los datos con la llave "Historial"
             return Ok(historiales);
         }
 
@@ -53,32 +53,32 @@ namespace MiProyecto.Controllers
         public IActionResult EliminarPaciente(int id)
         {
             var datos = ObtenerDatosDesdeArchivo();
-            var pacientes = datos["Pacientes"];
-            var pacienteExistente = pacientes.Find(p => p.Id == id);
-            if (pacienteExistente == null)
+            var historiales = datos["Historial"];
+            var historialExistente = historiales.Find(p => p.Id == id);
+            if (historialExistente == null)
             {
                 return NotFound();
             }
-            pacientes.Remove(pacienteExistente);
+            historiales.Remove(historialExistente);
             GuardarDatosEnArchivo(datos);
             return Ok();
         }
 
         private Dictionary<string, List<HistorialMedico>> ObtenerDatosDesdeArchivo()
         {
-            if (!System.IO.File.Exists(_archivoDatos))
+            if (!System.IO.File.Exists(_archivoDatos)) //Revisa si el archivo existe
             {
                 return new Dictionary<string, List<HistorialMedico>>();
             }
-            var json = System.IO.File.ReadAllText(_archivoDatos);
-            var datos = JsonConvert.DeserializeObject<Dictionary<string, List<HistorialMedico>>>(json);
+            var json = System.IO.File.ReadAllText(_archivoDatos); //Lee el archivo
+            var datos = JsonConvert.DeserializeObject<Dictionary<string, List<HistorialMedico>>>(json); //Deserializa los datos
             return datos;
         }
 
         private void GuardarDatosEnArchivo(Dictionary<string, List<HistorialMedico>> datos)
         {
-            var json = JsonConvert.SerializeObject(datos);
-            System.IO.File.WriteAllText(_archivoDatos, json);
+            var json = JsonConvert.SerializeObject(datos); //Serializa los datos
+            System.IO.File.WriteAllText(_archivoDatos, json); //Escribe el archivo
         }
     }
 

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -11,13 +12,13 @@ namespace MiProyecto.Controllers
     [Route("api/[controller]")]
     public class PacientesController : ControllerBase
     {
-        private readonly string _archivoDatos = "datos.json";
+        private readonly string _archivoDatos = "pacientes.json";
 
         [HttpGet]
         public IActionResult ObtenerPacientes()
         {
             var datos = ObtenerDatosDesdeArchivo();
-            var pacientes = datos["Pacientes"];
+            var pacientes = datos["Pacientes"]; // Del archivo almacena los datos con la llave "Pacientes"
             return Ok(pacientes);
         }
 
@@ -73,12 +74,13 @@ namespace MiProyecto.Controllers
 
         private Dictionary<string, List<Paciente>> ObtenerDatosDesdeArchivo()
         {
+            //Revisa si el archivo no existe
             if (!System.IO.File.Exists(_archivoDatos))
             {
                 return new Dictionary<string, List<Paciente>>();
             }
             var json = System.IO.File.ReadAllText(_archivoDatos);
-            var datos = JsonConvert.DeserializeObject<Dictionary<string, List<Paciente>>>(json);
+            var datos = JsonConvert.DeserializeObject<Dictionary<string, List<Paciente>>>(json); //Deserializa un objeto
             DesencriptarPassword(datos);
             return datos;
         }
@@ -86,7 +88,7 @@ namespace MiProyecto.Controllers
         private void GuardarDatosEnArchivo(Dictionary<string, List<Paciente>> datos)
         {
             EncriptarPassword(datos);
-            var json = JsonConvert.SerializeObject(datos);
+            var json = JsonConvert.SerializeObject(datos); //Serializa datos en un formato JSON valido
             System.IO.File.WriteAllText(_archivoDatos, json);
         }
 
@@ -95,17 +97,22 @@ namespace MiProyecto.Controllers
 
         private static void EncriptarPassword(Dictionary<string, List<Paciente>> datos)
         {
-            foreach (var pacienteList in datos.Values)
+            foreach (var pacienteList in datos.Values) // Itera sobre todas las listas de pacientes en el diccionario
+
             {
-                foreach (var paciente in pacienteList)
+                foreach (var paciente in pacienteList) // Itera sobre todos los pacientes en cada lista
                 {
-                    if (!string.IsNullOrEmpty(paciente.Password))
+                    if (!string.IsNullOrEmpty(paciente.Password)) // Si el paciente tiene una contraseña no vacía, se encripta
                     {
+                        // Convierte la contraseña en texto plano en un arreglo de bytes
                         byte[] passwordPlano = Encoding.UTF8.GetBytes(paciente.Password);
-                        using var aes = Aes.Create();
+
+                        using var aes = Aes.Create(); // Crea una instancia de AES para encriptar los datos
                         aes.Key = clave;
                         aes.IV = new byte[16];
                         using var encryptor = aes.CreateEncryptor();
+
+                        // Encripta la contraseña y la convierte a una cadena Base64
                         byte[] passwordEncriptado = encryptor.TransformFinalBlock(passwordPlano, 0, passwordPlano.Length);
                         paciente.Password = Convert.ToBase64String(passwordEncriptado);
                     }
@@ -115,17 +122,21 @@ namespace MiProyecto.Controllers
 
         private static void DesencriptarPassword(Dictionary<string, List<Paciente>> datos)
         {
-            foreach (var pacienteList in datos.Values)
+            foreach (var pacienteList in datos.Values) // Itera sobre todas las listas de pacientes en el diccionario
             {
-                foreach (var paciente in pacienteList)
+                foreach (var paciente in pacienteList) // Itera sobre todos los pacientes en cada lista
                 {
-                    if (!string.IsNullOrEmpty(paciente.Password))
+                    if (!string.IsNullOrEmpty(paciente.Password)) // Si el paciente tiene una contraseña no vacía, se desencripta
                     {
+                        // Convierte la contraseña encriptada en Base64 en un arreglo de bytes
                         byte[] passwordEncriptadoBytes = Convert.FromBase64String(paciente.Password);
-                        using var aes = Aes.Create();
+
+                        using var aes = Aes.Create(); // Crea una instancia de AES para desencriptar los datos
                         aes.Key = clave;
                         aes.IV = new byte[16];
                         using var decryptor = aes.CreateDecryptor();
+
+                        // Desencripta la contraseña y la convierte en una cadena de texto plano
                         byte[] passwordDesencriptadoBytes = decryptor.TransformFinalBlock(passwordEncriptadoBytes, 0, passwordEncriptadoBytes.Length);
                         paciente.Password = Encoding.UTF8.GetString(passwordDesencriptadoBytes);
                     }
