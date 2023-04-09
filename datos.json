@@ -1,57 +1,78 @@
 {
-    "Pacientes": [
-        {
-            "Id": 1,
-            "Paciente": null,
-            "FechaIngreso": "0001-01-01T00:00:00",
-            "DuracionProcedimientos": 0,
-            "FechaSalida": "0001-01-01T00:00:00"
-        },
-        {
-            "Id": 2,
-            "Paciente": null,
-            "FechaIngreso": "0001-01-01T00:00:00",
-            "DuracionProcedimientos": 0,
-            "FechaSalida": "0001-01-01T00:00:00"
-        },
-        {
-            "Id": 3,
-            "Paciente": null,
-            "FechaIngreso": "0001-01-01T00:00:00",
-            "DuracionProcedimientos": 0,
-            "FechaSalida": "0001-01-01T00:00:00"
-        }
-    ],
-    "Reservaciones": [
-        {
-            "Id": 1,
-            "Paciente": "string",
-            "FechaIngreso": "2023-03-24T22:01:42.501Z",
-            "DuracionProcedimientos": 4,
-            "FechaSalida": "2023-03-28T22:01:42.501Z"
-        },
-        {
-            "Id": 2,
-            "Paciente": "string ABC",
-            "FechaIngreso": "2023-03-24T22:01:42.501Z",
-            "DuracionProcedimientos": 12,
-            "FechaSalida": "2023-04-05T22:01:42.501Z"
-        }
-    ],
-    "Historial": [
-        {
-            "Id": 1,
-            "Paciente": null,
-            "FechaIngreso": "0001-01-01T00:00:00",
-            "DuracionProcedimientos": 0,
-            "FechaSalida": "0001-01-01T00:00:00"
-        },
-        {
-            "Id": 2,
-            "Paciente": null,
-            "FechaIngreso": "0001-01-01T00:00:00",
-            "DuracionProcedimientos": 0,
-            "FechaSalida": "0001-01-01T00:00:00"
-        }
-    ]
+  "Pacientes": [
+    {
+      "id": 5,
+      "Paciente": "Jorge",
+      "FechaIngreso": "0001-01-01T00:00:00",
+      "DuracionProcedimientos": 0,
+      "FechaSalida": "0001-01-01T00:00:00"
+    },
+    {
+      "id": 4,
+      "Paciente": "Pepe",
+      "FechaIngreso": "0001-01-01T00:00:00",
+      "DuracionProcedimientos": 123,
+      "FechaSalida": "0001-01-01T00:00:00"
+    },
+    {
+      "id": 30,
+      "Paciente": "Santiago",
+      "FechaIngreso": "0001-01-01T00:00:00",
+      "DuracionProcedimientos": 0,
+      "FechaSalida": "0001-01-01T00:00:00"
+    },
+    {
+      "id": 50,
+      "Paciente": "Aafdasdasd",
+      "FechaIngreso": "0001-01-01T00:00:00",
+      "DuracionProcedimientos": 0,
+      "FechaSalida": "0001-01-01T00:00:00"
+    },
+    {
+      "id": 1681074253203,
+      "Paciente": "asd",
+      "FechaIngreso": "111",
+      "DuracionProcedimientos": "1",
+      "FechaSalida": "11"
+    },
+    {
+      "id": 1681077980798,
+      "Paciente": "Aafdasdasd",
+      "FechaIngreso": "0001-01-01T00:00:00",
+      "DuracionProcedimientos": "1",
+      "FechaSalida": "11"
+    }
+  ],
+  "Reservaciones": [
+    {
+      "Id": 1,
+      "Paciente": "string",
+      "FechaIngreso": "2023-03-24T22:01:42.501Z",
+      "DuracionProcedimientos": 4,
+      "FechaSalida": "2023-03-28T22:01:42.501Z"
+    },
+    {
+      "Id": 2,
+      "Paciente": "string ABC",
+      "FechaIngreso": "2023-03-24T22:01:42.501Z",
+      "DuracionProcedimientos": 12,
+      "FechaSalida": "2023-04-05T22:01:42.501Z"
+    }
+  ],
+  "Historial": [
+    {
+      "Id": 1,
+      "Paciente": null,
+      "FechaIngreso": "0001-01-01T00:00:00",
+      "DuracionProcedimientos": 0,
+      "FechaSalida": "0001-01-01T00:00:00"
+    },
+    {
+      "Id": 2,
+      "Paciente": null,
+      "FechaIngreso": "0001-01-01T00:00:00",
+      "DuracionProcedimientos": 0,
+      "FechaSalida": "0001-01-01T00:00:00"
+    }
+  ]
 }

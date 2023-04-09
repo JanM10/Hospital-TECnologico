@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
+    "reactstrap": "^9.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -22,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "fake-api" : "json-server --watch datos.json --port 5000"
+    "fake-api": "json-server --watch datos.json --port 5000"
   },
   "eslintConfig": {
     "extends": [

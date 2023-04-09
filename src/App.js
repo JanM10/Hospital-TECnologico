@@ -6,11 +6,13 @@ import Reservacion from "./pages/Reservacion";
 import Historial_Medico from "./pages/Historial_medico";*/
 import CrudApp from "./components/CrudApp";
 import CrudApi from "./components/CrudApi";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     /*
-
+      <hr />
+      <CrudApp />
 
             <Router>
         <Routes>
@@ -24,8 +26,6 @@ function App() {
     <>
       <hr />
       <CrudApi />
-      <hr />
-      <CrudApp />
     </>
 
   );

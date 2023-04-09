@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
 const initialForm = {
-    name: "",
-    constellation: "",
     id: null,
+    Paciente: "",
+    FechaIngreso: "",
+    DuracionProcedimientos: "",
+    FechaSalida: "",
 };
 
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
@@ -21,14 +23,17 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     const handleChange = (e) => {
         setForm({
             ...form,
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value, //Aqui puede estar el error
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!form.name || !form.constellation) {
+        if (!form.Paciente
+            || !form.FechaIngreso
+            || !form.DuracionProcedimientos
+            || !form.FechaSalida) {
             alert("Datos incompletos");
             return;
         }
@@ -53,17 +58,31 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    name="name"
-                    placeholder="Nombre"
+                    name="Paciente"
+                    placeholder="Paciente"
                     onChange={handleChange}
-                    value={form.name}
+                    value={form.Paciente}
                 />
                 <input
                     type="text"
-                    name="constellation"
-                    placeholder='Constelacion'
+                    name="FechaIngreso"
+                    placeholder="Fecha de Ingreso"
                     onChange={handleChange}
-                    value={form.constellation}
+                    value={form.FechaIngreso}
+                />
+                <input
+                    type="text"
+                    name="DuracionProcedimientos"
+                    placeholder="Duracion del procedimiento"
+                    onChange={handleChange}
+                    value={form.DuracionProcedimientos}
+                />
+                <input
+                    type="text"
+                    name="FechaSalida"
+                    placeholder="Fecha de Salida"
+                    onChange={handleChange}
+                    value={form.FechaSalida}
                 />
 
                 <input type="submit" value="Enviar" />

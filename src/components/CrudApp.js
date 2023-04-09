@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import CrudForm from './CrudForm';
 import CrudTable from './CrudTable';
 import '../styles/crud-app.module.css'
-//import { v4 } from 'uuid'
 
 const initialDB = [
     {
@@ -27,9 +26,7 @@ const CrudApp = () => {
     const [dataToEdit, setDataToEdit] = useState(null)
 
     const createData = (data) => {
-        //data.id = v4();
         data.id = Date.now();
-        //console.log(data);
         setDb([...db, data]);
     };
 
