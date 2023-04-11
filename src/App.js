@@ -5,7 +5,7 @@ import Crear_cuenta from './pages/Crear_cuenta';
 import Reservacion from "./pages/Reservacion";
 import Historial_Medico from "./pages/Historial_medico";*/
 import CrudApp from "./components/CrudApp";
-import CrudApi from "./components/CrudApi";
+import CrudApiP from "./components/CrudApiP";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     */
     <>
       <hr />
-      <CrudApi />
+      <CrudApiP />
     </>
 
   );

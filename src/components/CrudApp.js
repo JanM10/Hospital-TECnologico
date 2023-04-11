@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import CrudForm from './CrudForm';
-import CrudTable from './CrudTable';
+import CrudForm from './CrudFormP';
+import CrudTable from './CrudTableP';
 import '../styles/crud-app.module.css'
 
 const initialDB = [

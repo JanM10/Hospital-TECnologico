@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import CrudForm from './CrudForm';
-import CrudTable from './CrudTable';
+import CrudForm from './CrudFormP';
+import CrudTable from './CrudTableP';
 import '../styles/crud-app.module.css'
 import { helpHttp } from '../helpers/helpHttp';
 import Loader from './Loader';
@@ -34,7 +34,7 @@ const CrudApi = () => {
   const createData = (data) => {
     data.id = Date.now();
 
-    let options = {body: data, headers:{"content-type":"application/json"}}
+    let options = { body: data, headers: { "content-type": "application/json" } }
 
     api.post(url, options).then(res => {
       console.log(res)
@@ -51,9 +51,9 @@ const CrudApi = () => {
     let endpoint = `${url}/${data.id}`
     //console.log(endpoint);
 
-    let options = {body: data, headers:{"content-type":"application/json"}}
+    let options = { body: data, headers: { "content-type": "application/json" } }
 
-    api.put(url, options).then(res => {
+    api.put(endpoint, options).then(res => {
       console.log(res)
       if (!res.err) {
         let newData = db.map(el => el.id === data.id ? data : el);
@@ -62,16 +62,27 @@ const CrudApi = () => {
         setError(res);
       }
     });
-    
-    
+
+
   };
 
   const deleteData = (id) => {
     let isDelete = window.confirm(`Esta seguro de eliminar el registro con el id '${id}' ?`);
 
     if (isDelete) {
-      let newData = db.filter(el => el.id !== id);
-      setDb(newData);
+      let endpoint = `${url}/${id}`
+      let options = { headers: { "content-type": "application/json" } }
+
+      api.del(endpoint, options).then(res => {
+        //console.log(res)
+        if (!res.err) {
+          let newData = db.filter(el => el.id !== id);
+          setDb(newData);
+        } else {
+          setError(res);
+        }
+      });
+
     } else {
       return;
     }

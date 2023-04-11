@@ -27,20 +27,6 @@
       "FechaIngreso": "0001-01-01T00:00:00",
       "DuracionProcedimientos": 0,
       "FechaSalida": "0001-01-01T00:00:00"
-    },
-    {
-      "id": 1681074253203,
-      "Paciente": "asd",
-      "FechaIngreso": "111",
-      "DuracionProcedimientos": "1",
-      "FechaSalida": "11"
-    },
-    {
-      "id": 1681077980798,
-      "Paciente": "Aafdasdasd",
-      "FechaIngreso": "0001-01-01T00:00:00",
-      "DuracionProcedimientos": "1",
-      "FechaSalida": "11"
     }
   ],
   "Reservaciones": [
