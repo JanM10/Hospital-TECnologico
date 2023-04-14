@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import CrudForm from './CrudFormP';
-import CrudTable from './CrudTableP';
+import CrudForm from './CrudFormR';
+import CrudTable from './CrudTableR';
 import '../styles/crud-app.css'
 import { helpHttp } from '../helpers/helpHttp';
 import Loader from './Loader';
@@ -14,7 +14,7 @@ const CrudApi = () => {
   const [loading, setLoading] = useState(false);
 
   let api = helpHttp();
-  let url = "http://localhost:5000/Pacientes";
+  let url = "http://localhost:5000/Reservaciones";
 
   useEffect(() => {
     setLoading(true);

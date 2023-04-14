@@ -1,5 +1,5 @@
 import React from 'react'
-import CrudTableRow from './CrudTableRowP'
+import CrudTableRow from './CrudTableRowR'
 
 const CrudTable = ({ data, setDataToEdit, deleteData }) => {
 

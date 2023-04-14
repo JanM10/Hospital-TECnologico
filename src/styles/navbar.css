@@ -82,3 +82,17 @@ header .nav-btn {
     }
 
 }
+
+.logo {
+    cursor: pointer;
+  }
+  
+.logo img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+  }
+  
+.logo img:hover {
+    transform: scale(1.2);
+  }

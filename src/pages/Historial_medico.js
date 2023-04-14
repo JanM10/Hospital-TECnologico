@@ -4,11 +4,10 @@ import 'datatables.net';
 import 'datatables.net/js/jquery.dataTables';
 /*import 'datatables.net/css/jquery.dataTables.min.css';*/
 import '../styles/historial.css';
-import Header from "../components/Header";
 
 
 /*import '../Front-End/styles/styles-forms.css';*/
-import 'bootstrap/dist/css/bootstrap.min.css';
+/*import 'bootstrap/dist/css/bootstrap.min.css';*/
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Historial_medico = () => {
@@ -26,7 +25,6 @@ const Historial_medico = () => {
 
     return (
         <>
-        <Header />
             <div className="container">
                 <div className="row">
                     <table ref={tableRef} className="display" style={{ width: '100%' }}>

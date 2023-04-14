@@ -38,15 +38,15 @@
   ],
   "Reservaciones": [
     {
-      "Id": 1,
-      "Paciente": "string",
+      "id": 1,
+      "Paciente": "jose",
       "FechaIngreso": "2023-03-24T22:01:42.501Z",
       "DuracionProcedimientos": 4,
       "FechaSalida": "2023-03-28T22:01:42.501Z"
     },
     {
-      "Id": 2,
-      "Paciente": "string ABC",
+      "id": 2,
+      "Paciente": "carlos",
       "FechaIngreso": "2023-03-24T22:01:42.501Z",
       "DuracionProcedimientos": 12,
       "FechaSalida": "2023-04-05T22:01:42.501Z"
@@ -54,14 +54,14 @@
   ],
   "Historial": [
     {
-      "Id": 1,
+      "id": 1,
       "Paciente": null,
       "FechaIngreso": "0001-01-01T00:00:00",
       "DuracionProcedimientos": 0,
       "FechaSalida": "0001-01-01T00:00:00"
     },
     {
-      "Id": 2,
+      "id": 2,
       "Paciente": null,
       "FechaIngreso": "0001-01-01T00:00:00",
       "DuracionProcedimientos": 0,
