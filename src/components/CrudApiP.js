@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CrudForm from './CrudFormP';
 import CrudTable from './CrudTableP';
-import '../styles/crud-app.module.css'
+import '../styles/crud-app.css'
 import { helpHttp } from '../helpers/helpHttp';
 import Loader from './Loader';
 import Message from './Message';
@@ -90,7 +90,7 @@ const CrudApi = () => {
 
   return (
     <div>
-      <h2>CRUD API</h2>
+      <h2>Crear cuenta de paciente</h2>
       <article className='grid-1-2'>
         <CrudForm
           createData={createData}

@@ -9,8 +9,8 @@ const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
             <td>{DuracionProcedimientos}</td>
             <td>{FechaSalida}</td>
             <td>
-                <button onClick={() => setDataToEdit(el)}>Editar</button>
-                <button onClick={() => deleteData(id)}>Eliminar</button>
+                <button className='button_edit_eli' onClick={() => setDataToEdit(el)}>Editar</button>
+                <button className='button_edit_eli' onClick={() => deleteData(id)}>Eliminar</button>
             </td>
         </tr>
     )

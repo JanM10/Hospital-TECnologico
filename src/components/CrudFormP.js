@@ -57,6 +57,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
             <h3>{dataToEdit ? "Editar" : "Agregar"}</h3>
             <form onSubmit={handleSubmit}>
                 <input
+                    className="input_type_text"
                     type="text"
                     name="Paciente"
                     placeholder="Paciente"
@@ -64,6 +65,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
                     value={form.Paciente}
                 />
                 <input
+                    className="input_type_text"
                     type="text"
                     name="FechaIngreso"
                     placeholder="Fecha de Ingreso"
@@ -71,6 +73,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
                     value={form.FechaIngreso}
                 />
                 <input
+                    className="input_type_text"
                     type="text"
                     name="DuracionProcedimientos"
                     placeholder="Duracion del procedimiento"
@@ -78,6 +81,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
                     value={form.DuracionProcedimientos}
                 />
                 <input
+                    className="input_type_text"
                     type="text"
                     name="FechaSalida"
                     placeholder="Fecha de Salida"
@@ -85,8 +89,8 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
                     value={form.FechaSalida}
                 />
 
-                <input type="submit" value="Enviar" />
-                <input type="reset" value="Limpiar" onClick={handleReset} />
+                <input className='button_sub_res' type="submit" value="Enviar" />
+                <input className='button_sub_res' type="reset" value="Limpiar" onClick={handleReset} />
             </form>
         </div>
     );

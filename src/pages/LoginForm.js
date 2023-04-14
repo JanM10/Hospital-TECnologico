@@ -1,17 +1,16 @@
 import React from "react";
-import Login from "../styles/loginform.module.css"
-import { Navigate, useNavigate } from "react-router-dom";
+import '../styles/loginform.css'
 
 const Loginform = () => {
 
     return (
-        <div className={Login.page}>
-            <div className={Login.cover}>
+        <div className="page"> 
+            <div className="cover">
                 <h1>Login</h1>
-                <input className={Login.input} type="text" placeholder="Username" />
-                <input className={Login.input} type="password" placeholder="Password" />
+                <input className="input" type="text" placeholder="Username" />
+                <input className="input" type="password" placeholder="Password" />
 
-                <div className={Login.login_btn} >Login</div>
+                <div className="login_btn">Login</div>
 
             </div>
         </div>

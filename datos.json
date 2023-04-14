@@ -27,6 +27,13 @@
       "FechaIngreso": "0001-01-01T00:00:00",
       "DuracionProcedimientos": 0,
       "FechaSalida": "0001-01-01T00:00:00"
+    },
+    {
+      "id": 1681444725628,
+      "Paciente": "asdasdasda",
+      "FechaIngreso": "111",
+      "DuracionProcedimientos": "1",
+      "FechaSalida": "11"
     }
   ],
   "Reservaciones": [
