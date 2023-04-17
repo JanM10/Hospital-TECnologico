@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import CrudForm from './CrudFormR';
 import CrudTable from './CrudTableR';
-import '../styles/crud-app.css'
-import { helpHttp } from '../helpers/helpHttp';
-import Loader from './Loader';
-import Message from './Message';
+import '../../styles/crud-app.css';
+import { helpHttp } from '../../helpers/helpHttp';
+import Loader from '../Loader';
+import Message from '../Message';
 
 
-const CrudApi = () => {
+const CrudApiR = () => {
   const [db, setDb] = useState(null);
   const [dataToEdit, setDataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   let api = helpHttp();
-  let url = "http://localhost:5000/Reservaciones";
+  /*let url = "http://localhost:5000/Reservaciones";*/
+  //let url = "https://localhost:7059/api/Reservaciones";
+  let url = "http://hospitaltec.somee.com/api/Reservaciones";
 
   useEffect(() => {
     setLoading(true);
@@ -90,7 +92,7 @@ const CrudApi = () => {
 
   return (
     <div>
-      <h2>Crear cuenta de paciente</h2>
+      <h2 className="h2">Solicite su reservacion</h2>
       <article className='grid-1-2'>
         <CrudForm
           createData={createData}
@@ -108,4 +110,4 @@ const CrudApi = () => {
   )
 }
 
-export default CrudApi;
+export default CrudApiR;

@@ -1,18 +1,17 @@
 import React from 'react'
-import CrudTableRow from './CrudTableRowR'
+import CrudTableRow from './CrudTableRowH'
 
-const CrudTable = ({ data, setDataToEdit, deleteData }) => {
+const CrudTableH = ({ data, setDataToEdit }) => {
 
     return (
         <div>
-            <h3>Tabla de datos</h3>
-            <table>
+            <h3 className="h2">Historial Médico</h3>
+            <table className="h2">
                 <thead>
                     <tr>
-                        <th>Paciente</th>
-                        <th>FechaIngreso</th>
-                        <th>DuracionProcedimientos</th>
-                        <th>FechaSalida</th>
+                        <th>Procedimientos</th>
+                        <th>Fecha del procedimiento</th>
+                        <th>Tratamiento prescrito</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -22,7 +21,6 @@ const CrudTable = ({ data, setDataToEdit, deleteData }) => {
                             el={el}
                             key={el.id}
                             setDataToEdit={setDataToEdit}
-                            deleteData={deleteData}
                         />))
                         :
                         (<tr><td colSpan="3">Sin datos</td></tr>)
@@ -33,4 +31,4 @@ const CrudTable = ({ data, setDataToEdit, deleteData }) => {
     )
 }
 
-export default CrudTable
+export default CrudTableH;

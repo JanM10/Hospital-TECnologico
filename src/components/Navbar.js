@@ -19,8 +19,8 @@ function Navbar() {
             <nav ref={navRef}>
                 <Link to='/'>Home</Link>
                 <Link to='/Paciente'>Paciente</Link>
-                <Link to='/Reservacion'>Reservacion</Link>
-                <Link to='/Historial_Medico'>Historial_Medico</Link>
+                <Link to='/Reservacion'>Reservación</Link>
+                <Link to='/Historial_Medico'>Historial Médico</Link>
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                     <FaTimes />
                 </button>

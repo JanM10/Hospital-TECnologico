@@ -1,1 +1,30 @@
-{"Pacientes":[{"Id":1,"Nombre":"string","Apellido1":"string","Apellido2":"string","Cedula":0,"Telefono":0,"Direccion":"string","FechaNacimiento":"string","Patologias":"string","Tratamiento":"string","Password":"MddzwESNS9Ppaej3EiSpBw=="},{"Id":2,"Nombre":"string","Apellido1":"string","Apellido2":"string","Cedula":0,"Telefono":0,"Direccion":"string","FechaNacimiento":"string","Patologias":"string","Tratamiento":"string","Password":"TMJ/5i/wfxHk5AhsyjTzMw=="}]}
+{
+    "Pacientes": [
+        {
+            "Id": 1,
+            "Nombre": "string",
+            "Apellido1": "string",
+            "Apellido2": "string",
+            "Cedula": 0,
+            "Telefono": 0,
+            "Direccion": "string",
+            "FechaNacimiento": "string",
+            "Patologias": "string",
+            "Tratamiento": "string",
+            "Password": "MddzwESNS9Ppaej3EiSpBw=="
+        },
+        {
+            "Id": 2,
+            "Nombre": "string",
+            "Apellido1": "string",
+            "Apellido2": "string",
+            "Cedula": 0,
+            "Telefono": 0,
+            "Direccion": "string",
+            "FechaNacimiento": "string",
+            "Patologias": "string",
+            "Tratamiento": "string",
+            "Password": "TMJ/5i/wfxHk5AhsyjTzMw=="
+        }
+    ]
+}

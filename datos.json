@@ -1,71 +1,55 @@
 {
   "Pacientes": [
     {
-      "id": 5,
-      "Paciente": "Jorge",
-      "FechaIngreso": "0001-01-01T00:00:00",
-      "DuracionProcedimientos": 0,
-      "FechaSalida": "0001-01-01T00:00:00"
-    },
-    {
-      "id": 4,
-      "Paciente": "Pepe",
-      "FechaIngreso": "0001-01-01T00:00:00",
-      "DuracionProcedimientos": 123,
-      "FechaSalida": "0001-01-01T00:00:00"
-    },
-    {
-      "id": 30,
-      "Paciente": "Santiago",
-      "FechaIngreso": "0001-01-01T00:00:00",
-      "DuracionProcedimientos": 0,
-      "FechaSalida": "0001-01-01T00:00:00"
-    },
-    {
-      "id": 50,
-      "Paciente": "Aafdasdasd",
-      "FechaIngreso": "0001-01-01T00:00:00",
-      "DuracionProcedimientos": 0,
-      "FechaSalida": "0001-01-01T00:00:00"
-    },
-    {
-      "id": 1681444725628,
-      "Paciente": "asdasdasda",
-      "FechaIngreso": "111",
-      "DuracionProcedimientos": "1",
-      "FechaSalida": "11"
+      "id": 1,
+      "nombre": "",
+      "apellido1": "",
+      "apellido2": "",
+      "cedula": "",
+      "telefono1": "",
+      "telefono2": "",
+      "direccion1": "",
+      "direccion2": "",
+      "fecha_nacimiento": "",
+      "patologias": "",
+      "tratamientos": ""
     }
   ],
   "Reservaciones": [
     {
-      "id": 1,
-      "Paciente": "jose",
-      "FechaIngreso": "2023-03-24T22:01:42.501Z",
-      "DuracionProcedimientos": 4,
-      "FechaSalida": "2023-03-28T22:01:42.501Z"
-    },
-    {
       "id": 2,
       "Paciente": "carlos",
       "FechaIngreso": "2023-03-24T22:01:42.501Z",
-      "DuracionProcedimientos": 12,
+      "Procedimientos": "Biopsia",
       "FechaSalida": "2023-04-05T22:01:42.501Z"
+    },
+    {
+      "id": 1681581551447,
+      "Paciente": "11111111",
+      "FechaIngreso": "2023-04-15",
+      "Procedimientos": "Ecografia",
+      "FechaSalida": "0001-01-01T00:00:00"
+    },
+    {
+      "id": 1681622629469,
+      "Paciente": "1111",
+      "FechaIngreso": "2023-04-15",
+      "Procedimientos": "Biopsia Ecografia ",
+      "FechaSalida": "1111"
     }
   ],
   "Historial": [
     {
       "id": 1,
-      "Paciente": null,
-      "FechaIngreso": "0001-01-01T00:00:00",
-      "DuracionProcedimientos": 0,
-      "FechaSalida": "0001-01-01T00:00:00"
+      "Procedimientos": "Biopsia",
+      "FechaProcedimiento": "2023-04-15",
+      "Tratamientos": "curita"
     },
     {
       "id": 2,
-      "Paciente": null,
-      "FechaIngreso": "0001-01-01T00:00:00",
-      "DuracionProcedimientos": 0,
-      "FechaSalida": "0001-01-01T00:00:00"
+      "Procedimientos": "Ecografia",
+      "FechaProcedimiento": "2023-04-15",
+      "Tratamientos": "curita"
     }
   ]
 }

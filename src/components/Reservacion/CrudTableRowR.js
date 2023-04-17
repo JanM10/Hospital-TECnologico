@@ -1,13 +1,13 @@
 import React from 'react'
 
 const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
-    let {id, FechaIngreso, Paciente, DuracionProcedimientos, FechaSalida} = el;
+    let {id, fechaIngreso, nombrePaciente, duracionProcedimientos, fechaSalida} = el;
     return (
         <tr>
-            <td>{Paciente}</td>
-            <td>{FechaIngreso}</td>
-            <td>{DuracionProcedimientos}</td>
-            <td>{FechaSalida}</td>
+            <td>{nombrePaciente}</td> {/* CAMBIAR TODO ESTO A COMO ESTABA ANTES*/}
+            <td>{fechaIngreso}</td>
+            <td>{duracionProcedimientos}</td>
+            <td>{fechaSalida}</td>
             <td>
                 <button className='button_edit_eli' onClick={() => setDataToEdit(el)}>Editar</button>
                 <button className='button_edit_eli' onClick={() => deleteData(id)}>Eliminar</button>
